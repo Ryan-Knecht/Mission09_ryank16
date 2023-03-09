@@ -3,10 +3,12 @@
 @{
 } 
 
+@*Create the cart*@
 <h2>Your cart</h2>
 
 <table class="table table-bordered table-striped">
 
+    @*Table header*@
     <thead>
         <tr>
             <th>Item</th>
@@ -16,6 +18,7 @@
         </tr>
     </thead>
 
+    @*Populate the table body*@
     <tbody>
         @foreach(var i in Model.cart.Items)
         {
@@ -28,6 +31,7 @@
         }
     </tbody>
 
+    @*Add the footer to calculate the total*@
     <tfoot>
         <tr>
             <td colspan="3">Total:</td>
@@ -38,6 +42,11 @@
 
 </table>
 
+
+@*Return to shopping*@
 <div>
     <a class="btn btun-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+    <a class="alert alert-success" role="alert">Thanks for shopping with us!</a>
 </div>
+
+@*I added an alert with the return to shopping button*@

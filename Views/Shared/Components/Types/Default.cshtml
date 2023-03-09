@@ -4,8 +4,10 @@
 
 @model IEnumerable<string>
 
+
+@*In the Home button I added the bootstrap to make it bold as well as an html 'strong' tag*@
 <div class="d-grid gap-2">
-    <a asp-controller="Home" asp-action="Index" asp-route-bookType="" asp-route-pageNum="1" class="btn btn-outline-secondary">Home</a>
+    <a asp-controller="Home" asp-action="Index" asp-route-bookType="" asp-route-pageNum="1" class="btn btn-outline-secondary font-weight-bold"><strong>Home</strong></a>
 
 
     @foreach (string t in Model)
