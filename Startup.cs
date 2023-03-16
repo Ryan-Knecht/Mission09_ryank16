@@ -35,11 +35,15 @@ namespace Bookstore
             });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
 
             /*Add razorpages, memorycache, session*/
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Cart>(x => SessionCart.GetCart(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
 
